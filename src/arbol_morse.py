@@ -25,6 +25,18 @@ def insertar(raiz, letra: str, morse: str):
     actual.letra = letra
 
 
+def buscar(raiz, morse: str):
+    actual = raiz
+
+    for caracter in morse:
+        if caracter == ".":
+            actual = actual.izquerda
+        elif caracter == "-":
+            actual = actual.derecha
+
+    return actual.letra
+
+
 def inorden(raiz):
     if raiz is None:
         return
