@@ -31,6 +31,8 @@ def buscar(raiz, morse: str):
     actual = raiz
 
     for caracter in morse:
+        if actual is None:
+            return ""
         if caracter == ".":
             actual = actual.izquerda
         elif caracter == "-":
