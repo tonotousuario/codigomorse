@@ -1,3 +1,6 @@
+from arbol_morse import buscar, ARBOL_MORSE
+
+
 def obtener_codificacion(texto: str) -> list[str]:
     """
     Este texto tiene que estar en formato morse (.,-, , ), espacio para separar
@@ -9,3 +12,13 @@ def obtener_codificacion(texto: str) -> list[str]:
         Salida: [".--.","---","-..",".-.","..",".-"," ","....",".-","-.-.",".",".-."," ",".","...","-","---"," ","-","---","-..","---"," ",".",".-.."," ","-..","..",".-",".-.-."]
     """
     return []
+
+
+def decodificar(lista_texto: list[str]):
+    texto_final = ""
+    for caracter in lista_texto:
+        if caracter == " ":
+            texto_final += " "
+        else:
+            texto_final += buscar(ARBOL_MORSE, caracter)
+    return texto_final
