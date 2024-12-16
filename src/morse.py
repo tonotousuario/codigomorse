@@ -11,7 +11,11 @@ def obtener_codificacion(texto: str) -> list[str]:
         Entrada: ".--. --- -.. .-. .. .-   .... .- -.-. . .-.   . ... - ---   - --- -.. ---   . .-..   -.. .. .- .-.-."
         Salida: [".--.","---","-..",".-.","..",".-"," ","....",".-","-.-.",".",".-."," ",".","...","-","---"," ","-","---","-..","---"," ",".",".-.."," ","-..","..",".-",".-.-."]
     """
-    return []
+    texto = texto.split(" ")
+    for i in range(len(texto)):
+        if texto[i] == "/":
+            texto[i] = " "
+    return texto
 
 
 def decodificar(lista_texto: list[str]):
